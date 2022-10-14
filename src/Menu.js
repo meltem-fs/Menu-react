@@ -1,9 +1,10 @@
 import React from "react";
 
-const Menu = ({ items }) => {
+const Menu = ({ items,category }) => {
   return (
     <div className="section-center">
-      {items.map((items) => {
+      {items.filter((item) => (category !== "" ? item.category === category : true))
+      .map((items) => {
         const { id, title, img, desc,price } = items;
         return (
           <main key={id} className="menu-item">
